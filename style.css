@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #EF891B;
+    --font-family: "Poppins", sans-serif;
+    --secondary-color: #23190C;
+}
+
+body {
+    font-family: var(--font-family);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo-img {
+    height: 65px;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+}
+
+.nav__link{
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 44px;
+}
+
+/* Hero Section */
+
+.hero-wrapper {
+    background-image: url("images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+#hero h1 {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    color: #23190C;
+    width: 866px;
+    margin-bottom: 43px;
+}
+
+#hero p {
+    width: 707px;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(245, 245, 245, 0.88);
+    font-size: 20px;
+
+}
+
+#hero .container{
+    margin-top: 163px;
+}
+
+#primary_action_btn{
+    box-sizing: border-box;
+    padding: 16px 32px;
+    background-color: var(--primary-color);
+    color: #F5F5F5;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #000000;
+    margin-top: 43px;
+}
+
+#secondary_action_btn{
+    padding: 16px 32px;
+    background: transparent;
+    color: var(--secondary-color);
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid #000000;
+    margin-top: 43px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
