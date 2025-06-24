@@ -17,6 +17,7 @@ body {
     width: 1170px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 /* Navigation */
@@ -55,6 +56,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    height: calc(900px);
 }
 
 #hero {
@@ -113,9 +115,90 @@ body {
     margin-top: 43px;
 }
 
+/* Services Section */
+.services {
+  padding: 40px;
+  position: relative;
+  margin-top: -100px; /* This pulls the section upward */
+  z-index: 3; 
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px; /* horizontal padding only */
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #E9E8E7;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 249px;
+  width: 370px;
+  box-shadow: 13px 14px 13.1px -9px rgba(0, 0, 0, 0.27);
+  
+}
+
+.service-card.dark{
+  background-color: #312D28;  
+  color: #F5F5F5;
+
+}
+
+.triangle-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 246px;    
+  height: 157px;   
+  background-image: url('images/hero.jpg'); 
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+  z-index: 2;  
+}
+
+
+.service-content {
+  z-index: 2;
+  position: relative;
+  margin-right: 36px;
+  margin-left: 36px;
+  margin-top: 34px;
+  margin-bottom: 48px;
+}
+
+
+.service-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 18px;
+  font-family: var(--font-family);
+  font-style: normal;
+}
 
 
 
+.service-card p {
+    margin-bottom: 18px;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.arrow {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 
 
