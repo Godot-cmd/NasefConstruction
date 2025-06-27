@@ -18,3 +18,111 @@
         display: block;
     }
 }
+
+
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  #hero {
+    margin-top: 200px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 40px;
+    max-width: 100%;
+    margin: 0 auto 30px;
+  }
+
+  #hero p {
+    font-size: 18px;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    margin-top: 30px;
+    width: auto;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  #hero {
+    margin-top: 200px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  #hero p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  #hero {
+    margin-top: 200px;
+    padding: 0 12px;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+  }
+
+  #hero p {
+    font-size: 15px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+}
+
+
+
+/* Horizontal scroll for service cards */
+@media (max-width: 1024px) {
+  .services .container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    max-width: 370px;
+  }
+}
+
+/* Optional: Hide scrollbar but allow scroll */
+.services .container::-webkit-scrollbar {
+  display: none;
+}
+.services .container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
