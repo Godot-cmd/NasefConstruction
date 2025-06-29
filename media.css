@@ -124,3 +124,211 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+
+/* RESPONSIVE DROPDOWN MENU */
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .nav .nav__link {
+        display: none;
+    }
+
+    .nav .toggle_btn {
+        display: block;
+    }
+}
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  #hero {
+    margin-top: 200px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #hero h1 {
+    font-size: 40px;
+    max-width: 100%;
+    margin: 0 auto 30px;
+  }
+
+  #hero p {
+    font-size: 18px;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    margin-top: 30px;
+    width: auto;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  #hero {
+    margin-top: 200px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  #hero h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  #hero p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  #hero {
+    margin-top: 200px;
+    padding: 0 12px;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+  }
+
+  #hero p {
+    font-size: 15px;
+  }
+
+  #primary_action_btn,
+  #secondary_action_btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+}
+
+
+
+/* Horizontal scroll for service cards */
+@media (max-width: 1024px) {
+  .services .container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    max-width: 370px;
+  }
+}
+
+/* Optional: Hide scrollbar but allow scroll */
+.services .container::-webkit-scrollbar {
+  display: none;
+}
+.services .container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* === Responsive About Us with Background Image === */
+
+/* Tablet & Mobile */
+@media (max-width: 1170px) {
+  .about-us {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("images/about-us-img.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 60px 20px;
+  }
+
+  .about-us .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .content-section {
+    width: 100%;
+  }
+
+  .about-us .content h2,
+  .about-us .content ul li,
+  .about-us .title h4 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .about-us .button a {
+    background-color: rgba(239, 137, 27, 0.85); /* slightly transparent orange */
+    font-size: 15px;
+    padding: 12px 12px 12px 50px;
+  }
+
+  .about-us .button a::before {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-us {
+    padding: 40px 16px;
+  }
+
+  .about-us .content h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .about-us .title h4 {
+    font-size: 16px;
+  }
+
+  .about-us .button a {
+    font-size: 14px;
+    padding: 10px 10px 10px 44px;
+  }
+
+  .about-us .button a::before {
+    width: 28px;
+    height: 28px;
+  }
+
+  ul li .done-symbol {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
