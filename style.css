@@ -412,6 +412,7 @@ nav .nav__link {
     display: flex;
     gap: 20px;
     /* flex-wrap: wrap; */
+    /* align-items: flex-end; */
 }
 
 *,
@@ -421,13 +422,13 @@ nav .nav__link {
 }
 
 .content-section {
-    float: left;
+    /* float: left; */
     width: 44.7%;
 
 }
 
 .image-section {
-    float: right;
+    /* float: right; */
     width: 55.3%;
 }
 
