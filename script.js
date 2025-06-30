@@ -49,3 +49,6 @@ window.addEventListener('resize', () => {
     toggleBtnIcon.classList = 'fa-solid fa-bars';
   }
 });
+
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
