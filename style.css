@@ -322,14 +322,13 @@ nav .nav__link {
     gap: 30px;
     padding: 0 20px;
     /* horizontal padding only */
+    
 }
 
 .service-card {
     position: relative;
     overflow: hidden;
     background: linear-gradient(114.37deg, #EFF0F2 0%, #FFFFFF 100%);
-    /* border: 2px solid var(--secondary-color); */
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -350,11 +349,12 @@ nav .nav__link {
 }
 
 .triangle-bg {
-    position: absolute;
+   position: absolute;
     top: 0;
     right: 0;
-    width: 246px;
-    height: 157px;
+    width: 65%; /* was fixed px, now % of card */
+    height: 65%;
+    padding-top: 22%; /* controls triangle aspect ratio (22% of card width) */
     background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -759,3 +759,5 @@ ul {
   border-top: 1px solid #444;
   margin-top: 20px;
 }
+
+
