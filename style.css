@@ -322,25 +322,42 @@ nav .nav__link {
     gap: 30px;
     padding: 0 20px;
     /* horizontal padding only */
+
+}
+
+.services-wrapper {
+    position: relative;
+}
+
+.scroll-arrow {
+    display: none;
 }
 
 .service-card {
     position: relative;
     overflow: hidden;
     background: linear-gradient(114.37deg, #EFF0F2 0%, #FFFFFF 100%);
-    /* border: 2px solid var(--secondary-color); */
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 249px;
     width: 100%;
     max-width: 370px;
     box-shadow: 13px 14px 13.1px -9px rgba(0, 0, 0, 0.27);
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+
 
 }
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.27);
+    filter: brightness(1.05);
+}
 
+.service-card:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
 
 
 .service-card.dark {
@@ -353,13 +370,45 @@ nav .nav__link {
     position: absolute;
     top: 0;
     right: 0;
-    width: 246px;
-    height: 157px;
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center;
+    width: 65%;
+    /* was fixed px, now % of card */
+    height: 65%;
+    padding-top: 22%;
+
     clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
     z-index: 2;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-card.service-1 .triangle-bg {
+    background-image: url('images/service-1.png');
+
+}
+
+.service-card.service-2 .triangle-bg {
+    background-image: url('images/service-2.jpg');
+
+}
+
+.service-card.service-3 .triangle-bg {
+    background-image: url('images/service-3.jpg');
+
+}
+
+.service-card.service-4 .triangle-bg {
+    background-image: url('images/service-4.jpg');
+
+}
+
+.service-card.service-5 .triangle-bg {
+    background-image: url('images/service-5.jpg');
+
+}
+
+.service-card.service-6 .triangle-bg {
+    background-image: url('images/service-6.jpg');
+
 }
 
 
@@ -393,6 +442,8 @@ nav .nav__link {
     cursor: pointer;
 
 }
+
+
 
 /* about us */
 
@@ -636,6 +687,7 @@ ul {
     /* border-radius: 12px; */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .contact-form h2,
 .contact-info h2 {
     margin-bottom: 20px;
@@ -685,77 +737,247 @@ ul {
 }
 
 .footer {
-  background-color: #23190c;
-  color: #F5F5F5;
-  padding: 40px 20px 20px;
-  font-family: 'Arial', sans-serif;
+    background-color: #23190c;
+    color: #F5F5F5;
+    padding: 40px 20px 20px;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .footer-brand img {
-  width: 120px;
-  margin-bottom: 10px;
-  filter: brightness(0) invert(1);
+    width: 120px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-  max-width: 250px;
-  font-size: 0.95rem;
-  line-height: 1.4;
+    max-width: 250px;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .footer-links,
 .footer-contact,
 .footer-social {
-  min-width: 200px;
+    min-width: 200px;
 }
 
 .footer-links h4,
 .footer-contact h4,
 .footer-social h4 {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #EF891B;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #EF891B;
 }
 
 .footer-links ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footer-links li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .footer-links a,
 .footer-contact p,
 .footer-social a {
-  color: #F5F5F5;
-  text-decoration: none;
-  font-size: 0.95rem;
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 0.95rem;
 }
 
 .footer-social a {
-  font-size: 1.2rem;
-  margin-right: 10px;
-  display: inline-block;
-  transition: color 0.3s;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    display: inline-block;
+    transition: color 0.3s;
 }
 
 .footer-social a:hover {
-  color: #EF891B;
+    color: #EF891B;
 }
 
 .footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  font-size: 0.85rem;
-  border-top: 1px solid #444;
-  margin-top: 20px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+
+/* Expanded service card */
+
+.service-card.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    z-index: 1000;
+    background: linear-gradient(114.37deg, #EFF0F2 0%, #FFFFFF 100%);
+    padding: 60px 0;
+    cursor: default;
+    overflow: hidden;
+    /* Hide page scroll, details will scroll */
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card.expanded.dark {
+    background: #312D28;
+    color: #F5F5F5;
+}
+
+.service-card.expanded.dark h3 {
+    color: #F5F5F5;
+}
+
+/* Hide arrow on expanded card */
+.service-card.expanded .arrow-right {
+    display: none;
+}
+
+/* Title styling */
+.service-card.expanded h3 {
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #23190C;
+}
+
+/* Hide paragraphs inside expanded card */
+.service-card.expanded p {
+    display: none;
+}
+
+/* Close button styling and visibility */
+.close-btn {
+    position: absolute;
+    top: 100px;
+    right: 60px;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    font-size: 36px;
+    color: #23190C;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    display: none;
+    /* hidden by default */
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #EF891B;
+}
+
+.service-card.expanded .close-btn {
+    display: block;
+}
+
+/* Triangle background section */
+.service-card.expanded .triangle-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 60%;
+    height: 100%;
+    padding-top: 0;
+    clip-path: none;
+    /* background-image: url('images/hero.jpg'); */
+    /* background-size: cover;
+  background-position: center; */
+    z-index: 2;
+}
+
+/* Details section - scrollable if content overflows */
+.details {
+    opacity: 0;
+    max-height: 0;
+    max-width: 40%;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    padding: 0 36px;
+    font-size: 18px;
+    /* added for scrolling */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #00a8a8 transparent;
+}
+
+.service-card.expanded .details {
+    opacity: 1;
+    max-height: calc(100vh - 140px);
+    /* viewport height minus padding + margins */
+    width: 100%;
+    padding-top: 20px;
+    text-align: start;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for WebKit */
+.service-card.expanded .details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.service-card.expanded .details::-webkit-scrollbar-thumb {
+    background-color: #00a8a8;
+    border-radius: 4px;
+}
+
+/* Checklist styles */
+.check-list {
+    margin: 0;
+    padding-left: 0;
+    /* removed left padding, handled by li */
+}
+
+.check-list li {
+    position: relative;
+    list-style: none;
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.check-list li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #00a8a8;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    padding-right: 15px;
+    /* prevent layout shift */
+}
+
+body.no-scroll::-webkit-scrollbar {
+    display: none;
 }
