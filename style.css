@@ -349,7 +349,7 @@ nav .nav__link {
 
 
 }
-.service-card:hover {
+/* .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.27);
     filter: brightness(1.05);
@@ -358,7 +358,7 @@ nav .nav__link {
 .service-card:active {
   transform: scale(0.98);
   filter: brightness(0.95);
-}
+} */
 
 
 .service-card.dark {
@@ -821,7 +821,7 @@ ul {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     max-width: none;
     max-height: none;
     z-index: 1000;
