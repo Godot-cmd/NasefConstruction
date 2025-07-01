@@ -397,6 +397,8 @@
     padding: 40px 0;
     overflow: hidden;
     position: fixed;
+    z-index: 1000;
+    /* high enough to be on top */
   }
 
   .service-card.expanded .service-icon {
