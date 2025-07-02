@@ -349,6 +349,7 @@ nav .nav__link {
 
 
 }
+
 /* .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.27);
@@ -816,169 +817,206 @@ ul {
 
 /* Expanded service card */
 
-.service-card.expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
-    max-width: none;
-    max-height: none;
-    z-index: 1000;
-    background: linear-gradient(114.37deg, #EFF0F2 0%, #FFFFFF 100%);
-    padding: 60px 0;
-    cursor: default;
-    overflow: hidden;
-    /* Hide page scroll, details will scroll */
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
+/* Modal Styles (replacing .service-card.expanded) */
+.service-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
-.service-card.expanded.dark {
-    background: #312D28;
-    color: #F5F5F5;
+.service-modal.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.service-card.expanded.dark h3 {
-    color: #F5F5F5;
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 100vh;
+  background: linear-gradient(114.37deg, #EFF0F2 0%, #FFFFFF 100%);
+  border-radius: 12px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
 }
 
-/* Hide arrow on expanded card */
-.service-card.expanded .arrow-right {
-    display: none;
+.service-modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-content.dark {
+  background: #312D28;
+  color: #F5F5F5;
+}
+
+.modal-content.dark h3 {
+  color: #F5F5F5;
 }
 
 /* Title styling */
-.service-card.expanded h3 {
-    margin-top: 20px;
-    font-size: 36px;
-    font-weight: 600;
-    color: #23190C;
+.modal-content h3 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #23190C;
+  position: relative;
+  z-index: 3;
 }
 
-/* Hide paragraphs inside expanded card */
-.service-card.expanded p {
-    display: none;
+/* Close button styling */
+.modal-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  font-size: 36px;
+  color: #23190C;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-/* Close button styling and visibility */
-.close-btn {
-    position: absolute;
-    top: 100px;
-    right: 60px;
-    background: rgba(255, 255, 255, 0.6);
-    border: none;
-    font-size: 36px;
-    color: #23190C;
-    cursor: pointer;
-    z-index: 10;
-    line-height: 1;
-    padding: 4px 12px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    display: none;
-    /* hidden by default */
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #EF891B;
 }
 
-.close-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #EF891B;
+.modal-content.dark .modal-close-btn {
+  background: rgba(49, 45, 40, 0.6);
+  color: #F5F5F5;
 }
 
-.service-card.expanded .close-btn {
-    display: block;
+.modal-content.dark .modal-close-btn:hover {
+  background: rgba(49, 45, 40, 0.9);
+  color: #EF891B;
 }
 
 /* Triangle background section */
-.service-card.expanded .triangle-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    width: 60%;
-    height: 100%;
-    padding-top: 0;
-    clip-path: none;
-    /* background-image: url('images/hero.jpg'); */
-    /* background-size: cover;
-  background-position: center; */
-    z-index: 2;
+.modal-triangle-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 60%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
 }
 
-/* Details section - scrollable if content overflows */
-.details {
-    opacity: 0;
-    max-height: 0;
-    max-width: 40%;
-    overflow: hidden;
-    transition: max-height 0.6s ease, opacity 0.4s ease;
-    padding: 0 36px;
-    font-size: 18px;
-    /* added for scrolling */
-    overflow-y: auto;
-    scrollbar-width: thin;
-    /* Firefox */
-    scrollbar-color: #00a8a8 transparent;
+.modal-triangle-bg.service-1 {
+  background-image: url("images/service-1.png");
 }
 
-.service-card.expanded .details {
-    opacity: 1;
-    max-height: calc(100vh - 140px);
-    /* viewport height minus padding + margins */
-    width: 100%;
-    padding-top: 20px;
-    text-align: start;
-    overflow-y: auto;
+/* Service 2 */
+.modal-triangle-bg.service-2 {
+  background-image: url("images/service-2.jpg");
 }
 
-/* Custom scrollbar for WebKit */
-.service-card.expanded .details::-webkit-scrollbar {
-    width: 8px;
+/* Service 3 */
+.modal-triangle-bg.service-3 {
+  background-image: url("images/service-3.jpg");
 }
 
-.service-card.expanded .details::-webkit-scrollbar-thumb {
-    background-color: #00a8a8;
-    border-radius: 4px;
+/* Service 4 */
+.modal-triangle-bg.service-4 {
+  background-image: url("images/service-4.jpg");
 }
 
-/* Checklist styles */
+/* Service 5 */
+.modal-triangle-bg.service-5 {
+  background-image: url("images/service-5.jpg");
+}
+
+/* Service 6 */
+.modal-triangle-bg.service-6 {
+  background-image: url("images/service-6.jpg");
+}
+
+/* Details section */
+.modal-details {
+  width: 38%;
+  padding-right: 40px;
+  font-size: 18px;
+  position: relative;
+  z-index: 3;
+  
+}
+
+/* Checklist styles (keep your existing) */
 .check-list {
-    margin: 0;
-    padding-left: 0;
-    /* removed left padding, handled by li */
+  margin: 0;
+  padding-left: 0;
+  
 }
 
 .check-list li {
-    position: relative;
-    list-style: none;
-    padding-left: 1.4rem;
-    margin-bottom: 1rem;
+  position: relative;
+  list-style: none;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+  
 }
 
 .check-list li:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 5px;
-    height: 11px;
-    border-width: 0 2px 2px 0;
-    border-style: solid;
-    border-color: #00a8a8;
-    transform-origin: bottom left;
-    transform: rotate(45deg);
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 5px;
+  height: 11px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: #00a8a8;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+
+/* Scrollbar styles */
+.modal-details {
+  overflow-y: auto;
+  max-height: 60vh;
+  padding-right: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #00a8a8 transparent;
+}
+
+.modal-details::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-details::-webkit-scrollbar-thumb {
+  background-color: #00a8a8;
+  border-radius: 4px;
 }
 
 body.no-scroll {
-    overflow: hidden;
-    height: 100vh;
-    padding-right: 15px;
-    /* prevent layout shift */
+  overflow: hidden;
+  height: 100vh;
+  padding-right: 15px; /* prevent layout shift */
 }
 
 body.no-scroll::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
+
