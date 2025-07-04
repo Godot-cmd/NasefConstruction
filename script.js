@@ -29,7 +29,6 @@ document.addEventListener('click', function (e) {
 });
 
 
-
 const toggleBtn = document.querySelector('.toggle_btn');
 const toggleBtnIcon = document.querySelector('.toggle_btn i');
 const dropdownMenu = document.querySelector('.dropdown_menu');
@@ -52,7 +51,6 @@ window.addEventListener('resize', () => {
 
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
 
 
 // SERVICE DETAILS

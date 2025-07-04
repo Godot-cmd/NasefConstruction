@@ -320,6 +320,8 @@
 
   .content-section {
     width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .about-us .content h2,
@@ -328,6 +330,33 @@
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   }
+
+  .about-us .content ul li {
+    display: flex;
+    align-items: center;
+    /* vertically center icon and text */
+    gap: 6px;
+    /* space between icon and text */
+    margin-bottom: 12px;
+    /* spacing between list items */
+  }
+
+  .about-us .content {
+    text-align: center;
+    /* centers the container content horizontally */
+  }
+
+  .about-us .content ul {
+    display: inline-block;
+    /* shrink-wrap the list width */
+    text-align: left;
+    /* aligns the list items left inside the ul */
+    padding-left: 20px;
+    /* keeps default bullet indent */
+    margin: 0;
+    /* reset default ul margin if needed */
+  }
+
 
 
   .about-us .button a {
@@ -372,6 +401,8 @@
     width: 16px;
     height: 16px;
     margin-right: 6px;
+    flex-shrink: 0;
+
   }
 }
 
@@ -405,8 +436,8 @@
     flex-direction: column;
     min-height: 0;
     overflow: visible;
-    
-    
+
+
   }
 
   .modal-content .modal-details {
@@ -418,7 +449,7 @@
     -webkit-overflow-scrolling: touch;
     max-height: none;
     flex: 1;
-    
+
   }
 
 
@@ -471,4 +502,39 @@
 
 
 
+}
+
+@media (max-width: 992px) {
+    .snip1533 {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 columns */
+    }
+}
+
+@media (max-width: 600px) {
+    .snip1533 {
+        flex: 1 1 100%;
+        /* 1 column */
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-column {
+        flex: 0 0 100%;
+    }
+
+    .why-choose-header {
+        margin-bottom: 40px;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }
